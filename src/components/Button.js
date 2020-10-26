@@ -2,6 +2,8 @@ import React from "react";
 
 import "components/Button.scss";
 
+const classNames = require('classnames');
+
 export default function Button(props) {
    let buttonClass = "button";
   
@@ -11,7 +13,8 @@ export default function Button(props) {
    if (props.danger){
       buttonClass += " button--danger";
    }
-  
+   
+   classNames('') 
    
    
    return (
