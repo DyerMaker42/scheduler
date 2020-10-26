@@ -1,12 +1,15 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import "index.scss";
-
+import "./styles.css";
 import Button from "components/Button";
-import Tweets from "tweets.json"
+import tweets from "./tweets.json"
+
+const tweet = tweets[0];
 
 storiesOf("Button", module)
   .addParameters({
