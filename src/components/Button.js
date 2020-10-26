@@ -20,9 +20,6 @@ export default function Button(props) {
    
    
    return <>
-
-
-
-   <button disabled={disableClass} {disaclassName={}>{props.children}</button>
-   </>;
+          <button disabled={disableClass} className={buttonClass}>{props.children}</button>
+         </>;
 }
