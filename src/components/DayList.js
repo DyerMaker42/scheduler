@@ -12,17 +12,21 @@ export default function DayList(props){
   //   />
   // })
   console.log(props, 'props')
-  
+  /* get mentor help tomrorow */
 
   return (
   <ul>
+    
     {props.days.map(day => {
     return (
+      <>
+      <DayList days={days} day={day} setDay={setDay} />
       <DayListItem 
       name={day.name} 
       spots={day.spots} 
       selected={day.name === props.day}
-      setDay={props.setDay}  />)
+      setDay={props.setDay}  />
+      </>)
   })}
   </ul>
   );
