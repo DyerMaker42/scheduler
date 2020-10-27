@@ -11,6 +11,7 @@ export default function DayListItem(props) {
 )
   /*refactor later put inside a functin*/ 
   
+
     let number;
     if(props.spots > 1){
     number = props.spots + ' spots remaining';
@@ -19,7 +20,7 @@ export default function DayListItem(props) {
     } else if(props.spots === 1) {
     number = '1 spot remaining';
     }
-   
+    
 
 
 
