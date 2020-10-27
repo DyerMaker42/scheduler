@@ -24,3 +24,9 @@ storiesOf("Button", module)
       Disabled
     </Button>
   ));
+
+storiesOf("DayListItem", module)
+    .addParameters({
+      backgrounds: [{ name: "dark", value: "222f3e", default:true}]
+    })
+    .add("Unselected", () => <DayListItem name=:"")
