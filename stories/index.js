@@ -9,6 +9,9 @@ import Button from "components/Button";
 
 import DayListItem from "components/DayListItem";
 
+import DayList from "components/DayList";
+
+
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
