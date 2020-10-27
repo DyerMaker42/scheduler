@@ -17,10 +17,10 @@ export default function DayList(props){
   return (
   <ul>
     
+    
     {props.days.map(day => {
     return (
       <>
-      <DayList days={days} day={day} setDay={setDay} />
       <DayListItem 
       name={day.name} 
       spots={day.spots} 
