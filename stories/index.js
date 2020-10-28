@@ -15,6 +15,8 @@ import InterviewerListItem from "components/InterviewerListItem"
 
 import InterviewerList from "components/InterviewerList"
 
+import Appointment from "components/Appointment/index"
+
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
