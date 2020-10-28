@@ -15,7 +15,7 @@ export default function InterviewerListItem(props) {
 
   // console.log(props, "props");
 
-  const classItem = classNames("interviewers__item",
+  const interviewerClass = classNames("interviewers__item",
     { "interviewers__item--selected":props.selected},
     {}
 
