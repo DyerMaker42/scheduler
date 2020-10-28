@@ -14,7 +14,7 @@ return (
         return (
           <>
         <InterviewerListItem
-          id={interviewer.id}
+          // id={interviewer.id}
           name={interviewer.name}
           avatar={interviewer.avatar}
           setInterviewer={props.setInterviewer}
