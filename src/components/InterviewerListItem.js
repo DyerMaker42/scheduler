@@ -22,9 +22,8 @@ export default function InterviewerListItem(props) {
   );
   //event handler
  const onClick = ((click)=>{
-  props.setInterviewer()
-  console.log('cats')
- })
+  props.setInterviewer(props.id)
+   })
   //set class
 
   return (
@@ -37,7 +36,7 @@ export default function InterviewerListItem(props) {
         src={props.avatar}
         alt={props.name}
       />
-      {props.name}
+      {props.selected && props.name}
     </li>
 
 

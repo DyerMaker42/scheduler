@@ -1,11 +1,29 @@
 import React from "react"
 
-export default function InterviewerList(props){
+import "components/InterviewerList.scss"
+import InterviewerListItem from "./InterviewerListItem"
 
+export default function InterviewerList(props){
+  console.log(props,"props")
 return (
   <section className="interviewers">
   <h4 className="interviewers__header text--light">Interviewer</h4>
-  <ul className="interviewers__list"></ul>
+  <ul className="interviewers__list">
+    
+      {props.interviewers.map((interviewer)=>{
+        return (
+          <>
+        <InterviewerListItem
+          id={interviewer.id}
+          name={interviewer.name}
+          avatar={interviewer.avatar}
+          setInterviewer={props.setInterviewer}
+          selected={props.interviewer===interviewer.id}
+              />
+        </>
+        )
+      })}
+    
+  </ul>
 </section>
-)
-}
+)};
