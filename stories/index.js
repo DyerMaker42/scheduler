@@ -21,6 +21,8 @@ import Header from "components/Appointment/Header"
 
 import Empty from "components/Appointment/Empty"
 
+import Show from "components/Appointment/Show"
+
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -147,3 +149,5 @@ storiesOf("Appointment", module)
   .add("Appointment with Time", () => <Appointment time="12pm" />)
   .add("Header", () => <Header time="12pm" />)
   .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+  .add("Show", () =><Show onEdit={action("onEdit")}
+                          onDelete={action("onDelete")}/> )
