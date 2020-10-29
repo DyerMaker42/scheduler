@@ -19,6 +19,8 @@ import Appointment from "components/Appointment/index"
 
 import Header from "components/Appointment/Header"
 
+import Empty from "components/Appointment/Empty"
+
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
