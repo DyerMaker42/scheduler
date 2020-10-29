@@ -16,15 +16,8 @@ export default function InterviewerListItem(props) {
   // console.log(props, "props");
 
   const interviewerClass = classNames("interviewers__item",
-    { "interviewers__item--selected":props.selected},
-    {}
-
+    { "interviewers__item--selected": props.selected },
   );
-  //event handler
- const onClick = ((click)=>{
-  props.setInterviewer(props.id)
-   })
-  //set class
 
   return (
     <li className={interviewerClass} onClick={props.setInterviewer}>

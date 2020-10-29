@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Empty(props){
-  
+  const onClick = () => props.onAdd();
 
 
   return (
@@ -10,7 +10,7 @@ export default function Empty(props){
     className="appointment__add-button"
     src="images/add.png"
     alt="Add"
-    onClick={props.onAdd}
+    onClick={onClick}
   />
 </main>
   )
