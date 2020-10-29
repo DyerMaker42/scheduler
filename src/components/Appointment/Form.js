@@ -7,6 +7,10 @@ import Button from "/components/Button.js";
 export default function Form(props){
 
 
+
+
+
+  return (
   <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
     <form autoComplete="off">
@@ -20,6 +24,7 @@ export default function Form(props){
         */
       />
     </form>
+    {/* decison to update value or onChange */}
     <InterviewerList interviewers={props.interviewers} value={interviewer} onChange={setInterviewer} />
   </section>
   <section className="appointment__card-right">
@@ -29,10 +34,6 @@ export default function Form(props){
     </section>
   </section>
 </main>
-
-
-
-  return (
   
   
     )
