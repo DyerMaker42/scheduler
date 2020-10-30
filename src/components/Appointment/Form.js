@@ -6,10 +6,10 @@ import Button from "components/Button";
 
 export default function Form(props){
 
-  const interviewer = props.interviewer;
-  const setInterviewer = props.setInterviewer;
+  
   const cancel = props.onCancel;
-
+  const [name, setName]=useState('name');
+  const [interviewer, setInterviewer]=useState('')
 
   return (
   <main className="appointment__card appointment__card--create">
