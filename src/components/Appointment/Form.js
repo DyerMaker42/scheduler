@@ -8,18 +8,26 @@ export default function Form(props){
 
   
   const cancel = props.onCancel;
-  const [name, setName]=useState('name');
-  const [interviewer, setInterviewer]=useState('')
-
+  const [name, setName] = useState(props.name || "");
+const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const onInput = onClick((event)=> {
+    setName();
+  })
+  const reset=(()=>{
+    setName("");
+    setInterviewer(null);
+  })
+  
   return (
   <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
     <form autoComplete="off">
       <input
         className="appointment__create-input text--semi-bold"
-        name="name"
+        name={name}
         type="text"
         placeholder="Enter Student Name"
+        onClick={onInput}
         /*
           This must be a controlled component
         */
