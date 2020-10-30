@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
 
 import "components/Appointment/styles.scss"
 
@@ -10,8 +10,12 @@ import Empty from "components/Appointment/Empty";
 
 export default function Appointment(props){
 
+  const ShowOrGo= () {
+    props.interview?<Show/>:<Empty/>
+  }
   return (
     <article className="appointment"></article>
+    {ShowOrGo}
   )
   }
 
