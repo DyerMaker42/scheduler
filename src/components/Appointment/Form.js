@@ -9,7 +9,7 @@ export default function Form(props){
   
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
-  const onInput = onClick((event)=> {
+  const onInput = ((event)=> {
     setName();
   })
   const reset=(()=>{
@@ -20,6 +20,9 @@ export default function Form(props){
    props.onCancel();
   });
 
+  const save = (event) => {
+    props.onSave(event)
+  }
 
 
   return (
@@ -32,6 +35,7 @@ export default function Form(props){
         type="text"
         placeholder="Enter Student Name"
         onClick={onInput}
+        onSubmit={event => event.preventDefault()}
         /*
           This must be a controlled component
         */
@@ -42,8 +46,8 @@ export default function Form(props){
   </section>
   <section className="appointment__card-right">
     <section className="appointment__actions">
-      <Button danger>{cancel && reset}</Button>
-      <Button confirm>{props.onSave}</Button>
+      <Button danger onClick={cancel && reset}>Cancel</Button>
+      <Button onClick={save} confirm>Save</Button>
     </section>
   </section>
 </main>
