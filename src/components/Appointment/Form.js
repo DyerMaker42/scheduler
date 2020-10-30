@@ -7,17 +7,21 @@ import Button from "components/Button";
 export default function Form(props){
 
   
-  const cancel = props.onCancel;
   const [name, setName] = useState(props.name || "");
-const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const onInput = onClick((event)=> {
     setName();
   })
   const reset=(()=>{
     setName("");
     setInterviewer(null);
-  })
-  
+  });
+  const cancel =(()=>{
+   props.onCancel();
+  });
+
+
+
   return (
   <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
@@ -38,7 +42,7 @@ const [interviewer, setInterviewer] = useState(props.interviewer || null);
   </section>
   <section className="appointment__card-right">
     <section className="appointment__actions">
-      <Button danger>{cancel}</Button>
+      <Button danger>{cancel && reset}</Button>
       <Button confirm>{props.onSave}</Button>
     </section>
   </section>
