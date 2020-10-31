@@ -9,14 +9,13 @@ import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 
 export default function Appointment(props){
-  // const interviewTrue = props.interview;
-  // const ShowOrGo= (props) {
-  //   interviewTrue? <Show student=props.student />:<Empty/>
-  // }
+  const interviewTrue = props.interview;
+  const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
+  
   return (
     <>
     <article className="appointment"></article>
-    {/* {ShowOrGo} */}
+    {ShowOrGo}
     </>
   )
   }
