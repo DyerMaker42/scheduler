@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import DayList from "components/DayList"
 import "components/Application.scss";
+import "components/Appointment";
+
+
 const days = [
   {
     id: 1,
@@ -35,7 +38,31 @@ const appointments = [
         avatar: "https://i.imgur.com/LpaY82x.png",
       }
     }
-  }
+  },
+  {
+    id: 3,
+    time: "4pm",
+    interview: {
+      student: "Mike Tyson",
+      interviewer: {
+        id: 2,
+        name: "Sylvia Palmer",
+        avatar: "https://i.imgur.com/LpaY82x.png",
+      }
+    }
+  },
+  {
+    id: 4,
+    time: "6pm",
+    interview: {
+      student: "Manny Paquiao",
+      interviewer: {
+        id: 3,
+        name: "Sylvia Palmer",
+        avatar: "https://i.imgur.com/LpaY82x.png",
+      }
+    }
+  },
 ];
 
 export default function Application(props) {
