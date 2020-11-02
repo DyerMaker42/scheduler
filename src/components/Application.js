@@ -70,6 +70,7 @@ export default function Application(props) {
   
   const [day, setDay] = useState("Monday");
   console.log(props,'AKA')
+  
   return (
     <main className="layout">
       <section className="sidebar">
