@@ -63,8 +63,8 @@ export default function Application(props) {
     day: "Monday",
     days: [],
     // you may put the line below, but will have to remove/comment hardcoded appointments variable
-    appointments: [], 
-    interviewers:{}
+    appointments: [],
+    interviewers: {}
   });
   // const dailyAppointments = getAppointmentsForDay(state, state.day);
   //state = { day: "Monday", days: [] };
@@ -72,20 +72,20 @@ export default function Application(props) {
   const setDay = day => setState({ ...state, day });
   //const setDays = day => setState(prev => ({ ...prev, days }));
 
-const appointments = getAppointmentsForDay(state, day);
+  const appointments = getAppointmentsForDay(state, day);
 
-const schedule = appointments.map((appointment) => {
-  const interview = getInterview(state, appointment.interview);
+  const schedule = appointments.map((appointment) => {
+    const interview = getInterview(state, appointment.interview);
 
-  return (
-    <Appointment
-      key={appointment.id}
-      id={appointment.id}
-      time={appointment.time}
-      interview={interview}
-    />
-  );
-});
+    return (
+      <Appointment
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={interview}
+      />
+    );
+  });
   const testUrl = {
     "GET_DAYS": "http://localhost:8001/api/days",
     "GET_APPOINTMENTS": "http://localhost:8001/api/appointments",
@@ -98,12 +98,12 @@ const schedule = appointments.map((appointment) => {
       axios.get(testUrl["GET_APPOINTMENTS"]),
       axios.get(testUrl["GET_INTERVIEWERS"]),
     ]).then((all) => {
-      console.log("ALL",all)
-      setState(prev => ({...prev, days:all[0], appointments:all[1], interviewers:all[2]}));
+      console.log("ALL", all)
+      setState(prev => ({ ...prev, days: all[0], appointments: all[1], interviewers: all[2] }));
       // console.log(days, appointments, interviewers)
     });
 
-    
+
 
     // axios.get(testUrl).then((res) => {
     //   // console.log(res.data)
