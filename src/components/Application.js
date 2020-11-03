@@ -86,7 +86,7 @@ export default function Application(props) {
       axios.get(testUrl["GET_INTERVIEWERS"]),
     ]).then((all) => {
       console.log("ALL",all)
-      //setState(prev => ({...prev, days:all[0], appointments:all[1], interviewers:all[2]}));
+      setState(prev => ({...prev, days:all[0], appointments:all[1], interviewers:all[2]}));
       // console.log(days, appointments, interviewers)
     });
 
