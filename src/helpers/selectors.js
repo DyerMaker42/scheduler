@@ -19,3 +19,7 @@ if (!filteredDays[0].appointments){
 }
  return filteredDays[0].appointments
 };
+
+export function getInterview(state, interview){
+  
+}
