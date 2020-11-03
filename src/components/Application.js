@@ -3,6 +3,7 @@ import axios from "axios";
 import DayList from "components/DayList"
 import "components/Application.scss";
 import Appointment from "components/Appointment";
+import { findAllByAltText } from "@testing-library/react";
 
 
 
@@ -62,25 +63,40 @@ export default function Application(props) {
     day: "Monday",
     days: [],
     // you may put the line below, but will have to remove/comment hardcoded appointments variable
-    appointments: {}
+    appointments: {}, 
+    interviewers:''
   });
   const dailyAppointments = [];
-     //state = { day: "Monday", days: [] };
-    setState({ ...state, day: "Tuesday", days:[] });
+  //state = { day: "Monday", days: [] };
+  setState({ ...state, day: "Tuesday", });
   const setDay = day => setState({ ...state, day });
-  const setDays = day => setState(prev => ({ ...prev, days }));
+  //const setDays = day => setState(prev => ({ ...prev, days }));
 
 
-  const testUrl = `http://localhost:8001/api/days`;
+  const testUrl = {
+    "GET_DAYS": "http://localhost:8001/api/days",
+    "GET_APPOINTMENTS": "http://localhost:8001/api/appointments",
+    "GET_INTERVIEWERS": "http://localhost:8001/api/interviewers",
+  }
 
   useEffect(() => {
+    Promise.all([
+      axios.get(testUrl["GET_DAYS"]),
+      axios.get(testUrl["GET_APPOINTMENTS"]),
+      axios.get(testUrl["GET_INTERVIEWERS"]),
+    ]).then((all) => {
+      console.log("ALL",all)
+      //setState(prev => ({...prev, days:all[0], appointments:all[1], interviewers:all[2]}));
+      // console.log(days, appointments, interviewers)
+    });
 
+    
 
-    axios.get(testUrl).then((res) => {
-      // console.log(res.data)
-      state.setDays(res.data)
-    })
-  }, [])
+    // axios.get(testUrl).then((res) => {
+    //   // console.log(res.data)
+    //   //
+    // })
+  });
 
 
   return (
@@ -107,7 +123,7 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {appointments.map((appointment) => {
+        {dailyAppointments.map((appointment) => {
           return <Appointment key={appointment.id} {...appointment} />
         })}
 
