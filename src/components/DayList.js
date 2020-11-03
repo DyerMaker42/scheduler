@@ -11,7 +11,7 @@ export default function DayList(props){
   //    key={day.id}
   //   />
   // })
-  console.log(props, 'props')
+ 
   /* get mentor help tomrorow */
 
   return (

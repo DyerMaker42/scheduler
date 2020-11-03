@@ -66,7 +66,7 @@ export default function Application(props) {
       setDays(res.data)
     })
   },[testUrl])
-  console.log(props,'AKA')
+  
   
   return (
     <main className="layout">
