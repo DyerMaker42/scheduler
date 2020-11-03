@@ -66,13 +66,26 @@ export default function Application(props) {
     appointments: [], 
     interviewers:{}
   });
-  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  // const dailyAppointments = getAppointmentsForDay(state, state.day);
   //state = { day: "Monday", days: [] };
   setState({ ...state, day: "Tuesday", });
   const setDay = day => setState({ ...state, day });
   //const setDays = day => setState(prev => ({ ...prev, days }));
 
+const appointments = getAppointmentsForDay(state, day);
 
+const schedule = appointments.map((appointment) => {
+  const interview = getInterview(state, appointment.interview);
+
+  return (
+    <Appointment
+      key={appointment.id}
+      id={appointment.id}
+      time={appointment.time}
+      interview={interview}
+    />
+  );
+});
   const testUrl = {
     "GET_DAYS": "http://localhost:8001/api/days",
     "GET_APPOINTMENTS": "http://localhost:8001/api/appointments",
@@ -123,9 +136,10 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {dailyAppointments.map((appointment) => {
+        {/* {dailyAppointments.map((appointment) => {
           return <Appointment key={appointment.id} {...appointment} />
-        })}
+        })} */}
+        {schedule}
 
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
       </section>
