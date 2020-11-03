@@ -3,8 +3,8 @@ import axios from "axios";
 import DayList from "components/DayList"
 import "components/Application.scss";
 import Appointment from "components/Appointment";
-import { findAllByAltText } from "@testing-library/react";
 
+import getAppointmentsForDay from "helpers/selectors.js"
 
 
 //hardcoded appt variables
@@ -63,10 +63,10 @@ export default function Application(props) {
     day: "Monday",
     days: [],
     // you may put the line below, but will have to remove/comment hardcoded appointments variable
-    appointments: {}, 
+    appointments: [], 
     interviewers:''
   });
-  const dailyAppointments = [];
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
   //state = { day: "Monday", days: [] };
   setState({ ...state, day: "Tuesday", });
   const setDay = day => setState({ ...state, day });

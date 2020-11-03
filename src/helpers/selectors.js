@@ -1,6 +1,6 @@
 import react from 'react';
 
-export function getAppointmentsForDay(state, day) {
+export default function getAppointmentsForDay(state, day) {
   // if (!day){
   //   return [];
   // }
