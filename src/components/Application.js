@@ -66,14 +66,14 @@ export default function Application(props) {
     appointments: [],
     interviewers: {}
   });
-  const day = state.day;
+  // const day = state.day;
   // const dailyAppointments = getAppointmentsForDay(state, state.day);
   //state = { day: "Monday", days: [] };
   // setState({ ...state, day: "Tuesday", });
   const setDay = day => setState({ ...state, day });
   //const setDays = day => setState(prev => ({ ...prev, days }));
 
-  const appointments = getAppointmentsForDay(state, day);
+  const appointments = getAppointmentsForDay(state, state.day);
 
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
@@ -100,7 +100,7 @@ export default function Application(props) {
       axios.get(testUrl["GET_INTERVIEWERS"]),
     ]).then((all) => {
       console.log("ALL", all)
-      setState(prev => ({ ...prev, days: all[0], appointments: all[1], interviewers: all[2] }));
+      setState(prev => ({ ...prev, days: all[0].data, appointments: all[1], interviewers: all[2] }));
       // console.log(days, appointments, interviewers)
     });
 
