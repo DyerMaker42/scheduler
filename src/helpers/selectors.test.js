@@ -54,10 +54,10 @@ test("getAppointmentsForDay returns an array with a length matching the number o
 
 test("getAppointmentsForDay returns an array containing the correct appointment objects", () => {
   const [first, second] = getAppointmentsForDay(state, "Tuesday");
-  expect(first).toEqual(state.appointments["4"].id);
+  expect(first).toEqual(state.appointments["4"]);
   // console.log('first' ,first)
   // console.log("state appointsme", state.appointments)
-  expect(second).toEqual(state.appointments["5"].id);
+  expect(second).toEqual(state.appointments["5"]);
 });
 
 test("getAppointmentsForDay returns an empty array when the days data is empty", () => {
