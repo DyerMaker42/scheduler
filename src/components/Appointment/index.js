@@ -17,12 +17,12 @@ export default function Appointment(props){
   const {mode, transition, back} = useVisualMode(
     interviewTrue ?  SHOW: EMPTY
   )
-  const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
+  // const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
   return (
     <>
     <article className="appointment"></article>
     {mode === EMPTY && <Empty onAdd={() => console.log("Clicked onAdd")} />}
-    {mode=== SHOW && ShowOrGo}
+    {mode=== SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer}/>}
     {/* {ShowOrGo} */}
     </>
   )
