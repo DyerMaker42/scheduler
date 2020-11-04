@@ -52,14 +52,16 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day){
   const filtInt = [];
-  for (const int of state.days) {
-    if (int.name === day) {
+  for (const dayEntry of state.days) {
+    if (dayEntry.name === day) {
       // let int = state.appointments[appointment].interview.interviewer;
-      for (let appointment of int.appointments) {
-        if (state.appointments[appointment].interview && !filtInt.includes(state.interviewers[state.appointments[appointment].interview.interviewer])) {
-          filtInt.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
-        }
-      }
+      // for (let appointment of int.appointments) {
+      //   if (state.appointments[appointment].interview && !filtInt.includes(state.interviewers[state.appointments[appointment].interview.interviewer])) {
+      //     filtInt.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
+      //   }
+      // }
+
+
     }
   }
   console.log(filtInt, "WTF DOES IT RETURN")
