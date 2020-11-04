@@ -62,11 +62,11 @@ export function getInterviewersForDay(state, day) {
   const filtInt = [];
   for (const dayEntry of state.days) {
     if (dayEntry.name === day) {
-      console.log(dayEntry.interviewers, "dayentry interviewers")
+      //console.log(dayEntry.interviewers, "dayentry interviewers")
       //goes through each interviwer that are there on that day 
       //and it pushes their respectivf int objet to filt int array to be returned
       dayEntry.interviewers.forEach((id) => {
-        console.log(id, "id")
+        //console.log(id, "id")
         filtInt.push(state.interviewers[id])
 
       })
