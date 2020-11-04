@@ -9,16 +9,21 @@ import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 import useVisualMode from "hooks/useVisualMode"
 
+const EMPTY = "EMPTY";
+const SHOW = "SHOW";
+
 export default function Appointment(props){
   const interviewTrue = props.interview;
+  const {mode, transition, back} = useVisualMode(
+    interviewTrue ?  SHOW: EMPTY
+  )
   const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
-  const EMPTY = "EMPTY";
-  const SHOW = "SHOW";
-  
   return (
     <>
     <article className="appointment"></article>
-    {ShowOrGo}
+    {mode === EMPTY && <Empty onAdd={() => console.log("Clicked onAdd")} />}
+    {mode=== SHOW && ShowOrGo}
+    {/* {ShowOrGo} */}
     </>
   )
   }
