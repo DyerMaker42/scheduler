@@ -26,10 +26,11 @@ export default function Appointment(props) {
     };
 
     props.bookInterview(props.id, interview)
-      .then(res => {
-        console.log(res, "save res")
-        transition(SHOW)
-      })
+    transition(SHOW)  
+    // .then(res => {
+      //   console.log(res, "save res")
+      //   transition(SHOW)
+      // })
 
   }
 
@@ -40,7 +41,7 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition("CREATE", mode)} />}
       {mode === SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer} />}
       {/* don't think this \/ should be show, like edit or create maybe */}
-      {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onClick={save} />}
+      {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onSave={save} />}
       {/* {ShowOrGo} */}
     </>
   )
