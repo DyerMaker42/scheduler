@@ -51,14 +51,18 @@ export function getInterview(state, interview) {
 }
 
 export function getInterviewersForDay(state, day){
-  const filteredInterviews = [];
-  for (const appt of state.days) {
-    if (appt.name === day) {
-      for (let appointment of appt.appointments) {
-        filteredDays.push(state.appointments[appointment])
+  const filtInt = [];
+  for (const int of state.days) {
+    if (int.name === day) {
+      // let int = state.appointments[appointment].interview.interviewer;
+      for (let appointment of int.appointments) {
+        if (state.appointments[appointment].interview && !filtInt.includes(state.interviewers[state.appointments[appointment].interview.interviewer])) {
+          filtInt.push(state.interviewers[state.appointments[appointment].interview.interviewer]);
+        }
       }
     }
   }
-
-    return filteredInterviews;
+  console.log(filtInt)
+    return filtInt;
 }
+
