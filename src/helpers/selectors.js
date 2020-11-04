@@ -49,3 +49,16 @@ export function getInterview(state, interview) {
 
   return intObj
 }
+
+export function getInterviewersForDay(state, day){
+  const filteredInterviews = [];
+  for (const appt of state.days) {
+    if (appt.name === day) {
+      for (let appointment of appt.appointments) {
+        filteredDays.push(state.appointments[appointment])
+      }
+    }
+  }
+
+    return filteredInterviews;
+}
