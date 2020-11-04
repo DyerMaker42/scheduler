@@ -62,7 +62,7 @@ export function getInterviewersForDay(state, day){
       }
     }
   }
-  console.log(filtInt)
+  console.log(filtInt, "WTF DOES IT RETURN")
     return filtInt;
 }
 
