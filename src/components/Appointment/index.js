@@ -19,6 +19,14 @@ export default function Appointment(props){
   const {mode, transition, back} = useVisualMode(
     interviewTrue ?  SHOW: EMPTY
   )
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+
+    props.bookInterview(props.id, interview).then( res => console.log(res, "save res") )
+  }
 
   // const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
   return (
@@ -27,7 +35,7 @@ export default function Appointment(props){
     {mode === EMPTY && <Empty onAdd={() => transition("CREATE", mode)}  />}
     {mode=== SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer}/>}
     {/* don't think this \/ should be show, like edit or create maybe */}
-    {mode=== CREATE && <Form interviewer={[]} onCancel={back} /> } 
+    {mode=== CREATE && <Form interviewer={[]} onCancel={back} onClick={save} /> } 
     {/* {ShowOrGo} */}
     </>
   )
