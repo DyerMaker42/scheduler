@@ -11,6 +11,7 @@ import useVisualMode from "hooks/useVisualMode"
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
+const CREATE = "CREATE";
 
 export default function Appointment(props){
   const interviewTrue = props.interview;
@@ -21,8 +22,10 @@ export default function Appointment(props){
   return (
     <>
     <article className="appointment"></article>
-    {mode === EMPTY && <Empty onAdd={() => console.log("Clicked onAdd")} />}
+    {mode === EMPTY && <Empty onAdd={() => transition("CREATE", mode)} />}
     {mode=== SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer}/>}
+    {/* don't think this \/ should be show, like edit or create maybe */}
+    {mode=== CREATE && <Show interviewer={[]}/> } 
     {/* {ShowOrGo} */}
     </>
   )
