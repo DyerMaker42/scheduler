@@ -39,8 +39,8 @@ export function getInterview(state, interview) {
   }
 
   for (const person in state.interviewers) {
-    console.log("AAA", person)
-    console.log("BBB", interview.interviewer)
+    // console.log("AAA", person)
+    // console.log("BBB", interview.interviewer)
     if (person == interview.interviewer) {
       intObj = { student: interview.student, interviewer: state.interviewers[person] }
     }
