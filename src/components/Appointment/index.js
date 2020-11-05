@@ -19,6 +19,8 @@ const SAVING = "SAVING";
 const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
 const EDITING = "EDITING";
+const ERROR_SAVE = "ERROR_SAVE"
+const ERROR_DELETE = "ERROR DELETE"
 
 export default function Appointment(props) {
   const interviewTrue = props.interview;
@@ -36,6 +38,9 @@ export default function Appointment(props) {
         //console.log(res, "save res")
         transition(SHOW, true)
       })
+      .catch(err => {
+        transition(ERROR_SAVE)
+      })
   }
 
   function deleting() {
@@ -44,7 +49,7 @@ export default function Appointment(props) {
       .then((res) => {
         transition(EMPTY)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => transition(ERROR_DELETE))
   }
 
   function confirm() {
