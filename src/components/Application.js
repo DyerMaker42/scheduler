@@ -70,7 +70,7 @@ export default function Application(props) {
   //const setDays = day => setState(prev => ({ ...prev, days }));
 
   function bookInterview(id, interview) {
-    //console.log(id,"BOOK INTER");
+    
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview: interview})
     .then((res,err) => {
       console.log(res, "axios promise")
