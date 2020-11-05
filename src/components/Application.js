@@ -89,9 +89,9 @@ export default function Application(props) {
         
       })
       .catch((err, res) =>{
-        console.log(id, interview)
+        
         console.log(err, "sorry charlie")
-        console.log(res)
+       
       })
 
       
