@@ -9,10 +9,12 @@ import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 import Form from "components/Appointment/Form"
 import useVisualMode from "hooks/useVisualMode"
+import Status from "components/Appointment/Status"
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
+const SAVING = "SAVING"
 
 export default function Appointment(props) {
   const interviewTrue = props.interview;
@@ -24,7 +26,7 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-
+    transition(SAVING);
     props.bookInterview(props.id, interview)
      .then(res => {
       //console.log(res, "save res")
@@ -41,6 +43,7 @@ export default function Appointment(props) {
       {mode === SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer} />}
       {/* don't think this \/ should be show, like edit or create maybe */}
       {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onSave={save} />}
+      {mode === SAVING && <Status/>}
       {/* {ShowOrGo} */}
     </article>
   )
