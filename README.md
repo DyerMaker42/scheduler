@@ -28,10 +28,10 @@ npm run storybook
 !["The popup and promt for the delete confirmation state"](https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Confirmation.png?raw=true)
 
 ### Edit
-(https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Edit.png?raw=true)
+!["The popup and promt for the edit interview state"](https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Edit.png?raw=true)
 
 ### Empty Schedule 
-(https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Empty.png?raw=true)
+!["View of page when schedule empty for given day"](https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Empty.png?raw=true)
 
 ### Full Use Page
-(https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Full_Screen.png?raw=true)
+!["View of page with a full day of interviews"](https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Full_Screen.png?raw=true)
