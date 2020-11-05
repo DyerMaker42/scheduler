@@ -41,12 +41,9 @@ export default function Form(props) {
             onSubmit={event => event.preventDefault()}
             value={name}
             onChange={onNameChange}
-          /*
-            This must be a controlled component
-          */
           />
         </form>
-        {/* decison to update value or */}
+        
         <InterviewerList
           interviewers={props.interviewers}
           interviewer={interviewer}
