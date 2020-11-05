@@ -9,9 +9,7 @@ export default function DayListItem(props) {
   {"day-list__item--selected":props.selected},
   {"day-list__item--full": props.spot == 0}
 )
-  /*refactor later put inside a functin*/ 
   
-
     let number;
     if(props.spots > 1){
     number = props.spots + ' spots remaining';
@@ -21,9 +19,6 @@ export default function DayListItem(props) {
     number = '1 spot remaining';
     }
     
-
-
-
   return (
     <li 
     className= {selectClass} 
