@@ -2,18 +2,18 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 
 const state = {
   days: [{
-      id: 1,
-      name: "Monday",
-      appointments: [1, 2, 3],
-      interviewers: [2]
-    },
-    {
-      id: 2,
-      name: "Tuesday",
-      appointments: [4, 5],
-      interviewers: [1,2]
-    },
-    
+    id: 1,
+    name: "Monday",
+    appointments: [1, 2, 3],
+    interviewers: [2]
+  },
+  {
+    id: 2,
+    name: "Tuesday",
+    appointments: [4, 5],
+    interviewers: [1, 2]
+  },
+
   ],
   appointments: {
     "1": { id: 1, time: "12pm", interview: null },
@@ -78,8 +78,6 @@ test("getAppointmentsForDay returns an array with a length matching the number o
 test("getAppointmentsForDay returns an array containing the correct appointment objects", () => {
   const [first, second] = getAppointmentsForDay(state, "Tuesday");
   expect(first).toEqual(state.appointments["4"]);
-  // console.log('first' ,first)
-  // console.log("state appointsme", state.appointments)
   expect(second).toEqual(state.appointments["5"]);
 });
 
