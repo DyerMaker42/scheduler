@@ -22,15 +22,16 @@ npm test
 npm run storybook
 ```
 
-Screenshots
+## Screenshots
 
-## Delete Confirmation State
+# Delete 
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Confirmation.png?raw=true)
 
-## Edit Appointment State
+# Edit
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Edit.png?raw=true)
 
-## Empty Schedule 
+# Empty Schedule 
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Empty.png?raw=true)
-## Full Use Page
+
+# Full Use Page
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Full_Screen.png?raw=true)
