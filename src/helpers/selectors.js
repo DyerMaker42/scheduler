@@ -20,14 +20,14 @@ export function getAppointmentsForDay(state, day) {
 export function getInterview(state, interview) {
   let intObj = null;
   if (!interview) {
-    return intObj
+    return intObj;
   }
   for (const person in state.interviewers) {
     if (person == interview.interviewer) {
       intObj = { student: interview.student, interviewer: state.interviewers[person] }
     }
   }
-  return intObj
+  return intObj;
 }
 
 export function getInterviewersForDay(state, day) {

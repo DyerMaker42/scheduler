@@ -24,14 +24,14 @@ npm run storybook
 
 ## Screenshots
 
-# Delete 
-(https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Confirmation.png?raw=true)
+### Delete 
+!["The popup and promt for the delete confirmation state"](https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Confirmation.png?raw=true)
 
-# Edit
+### Edit
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Edit.png?raw=true)
 
-# Empty Schedule 
+### Empty Schedule 
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Empty.png?raw=true)
 
-# Full Use Page
+### Full Use Page
 (https://github.com/DyerMaker42/scheduler/blob/master/docs/Scheduler_Full_Screen.png?raw=true)
