@@ -71,25 +71,30 @@ export default function Application(props) {
 
   function bookInterview(id, interview) {
     //console.log(id,"BOOK INTER");
-    const appointment = {
-      ...state.appointments[id],
-      interview:{...interview}
-    }
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment
-    };
-    setState({
-      ...state,
-      appointments
-    })
-    axios.put(`http://localhost:8001/api/appointments/${id}`, interview)
-      .then(res => {
-        console.log(res, "axios promise")
+    return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview: interview})
+    .then((res,err) => {
+      console.log(res, "axios promise")
+          const appointment = {
+            ...state.appointments[id],
+            interview:{...interview}
+          }
+          const appointments = {
+            ...state.appointments,
+            [id]: appointment
+          };
+          setState({
+            ...state,
+            appointments
+          });
+        
       })
-      .catch(err =>{
+      .catch((err, res) =>{
+        console.log(id, interview)
         console.log(err, "sorry charlie")
+        console.log(res)
       })
+
+      
   };
 
   const appointments = getAppointmentsForDay(state, state.day);

@@ -26,11 +26,10 @@ export default function Appointment(props) {
     };
 
     props.bookInterview(props.id, interview)
-    transition(SHOW)
-    // .then(res => {
-    //   console.log(res, "save res")
-    //   transition(SHOW)
-    // })
+     .then(res => {
+      //console.log(res, "save res")
+      transition(SHOW)
+    })
 
   }
 
