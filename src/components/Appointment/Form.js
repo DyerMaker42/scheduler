@@ -43,7 +43,6 @@ export default function Form(props) {
             onChange={onNameChange}
           />
         </form>
-        
         <InterviewerList
           interviewers={props.interviewers}
           interviewer={interviewer}
