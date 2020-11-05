@@ -135,7 +135,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewersForDay}
         bookInterview={bookInterview}
-        onDelete={cancelInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });

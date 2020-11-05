@@ -36,7 +36,7 @@ export default function Appointment(props) {
     props.bookInterview(props.id, interview)
       .then(res => {
         //console.log(res, "save res")
-        transition(SHOW, true)
+        transition(SHOW)
       })
       .catch(err => {
         transition(ERROR_SAVE)
@@ -45,15 +45,15 @@ export default function Appointment(props) {
 
   function deleting() {
     transition(DELETING, true)
-    props.onDelete(props.id)
+    props.cancelInterview(props.id)
       .then((res) => {
         transition(EMPTY)
       })
-      .catch((err) => transition(ERROR_DELETE))
+      .catch((err) => transition(ERROR_DELETE, true))
   }
 
   function confirm() {
-    transition(CONFIRM,);
+    transition(CONFIRM);
   }
 
   function edit() {
@@ -72,7 +72,7 @@ export default function Appointment(props) {
       {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onSave={save} />}
       {mode === SAVING && <Status message="Saving..." />}
       {mode === DELETING && <Status message="Deleting" />}
-      {mode === CONFIRM && <Confirm onClick={back} onConfirm={deleting} message="Are you sure you want to delete?"/>}
+      {mode === CONFIRM && <Confirm onCancel={back} onConfirm={deleting} message="Are you sure you want to delete?"/>}
       {mode === EDITING && <Form name={props.interview.student} interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers} onSave={save} onCancel={back} />}
       {/* {ShowOrGo} */}
