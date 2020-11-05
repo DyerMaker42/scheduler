@@ -35,7 +35,6 @@ export default function Appointment(props) {
     transition(SAVING);
     props.bookInterview(props.id, interview)
       .then(res => {
-        //console.log(res, "save res")
         transition(SHOW)
       })
       .catch(err => {
@@ -61,21 +60,20 @@ export default function Appointment(props) {
   }
 
 
-  // const ShowOrGo = interviewTrue ? <Show name={props.interview.student} interviewer={props.interview.interviewer}/>:<Empty/>;
+
   return (
     <article data-testid="appointment" className="appointment" key={props.id}>
       <Header time={props.time}></Header>
       {mode === EMPTY && <Empty onAdd={() => transition("CREATE", mode)} />}
       {mode === SHOW && <Show name={props.interview.student} interviewer={props.interview.interviewer}
         onEdit={edit} onDelete={confirm} />}
-      {/* don't think this \/ should be show, like edit or create maybe */}
       {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onSave={save} />}
       {mode === SAVING && <Status message="Saving..." />}
       {mode === DELETING && <Status message="Deleting" />}
-      {mode === CONFIRM && <Confirm onCancel={back} onConfirm={deleting} message="Are you sure you want to delete?"/>}
+      {mode === CONFIRM && <Confirm onCancel={back} onConfirm={deleting} message="Are you sure you want to delete?" />}
       {mode === EDITING && <Form name={props.interview.student} interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers} onSave={save} onCancel={back} />}
-      {/* {ShowOrGo} */}
+
     </article>
   )
 }
