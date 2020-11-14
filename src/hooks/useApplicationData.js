@@ -17,7 +17,7 @@ export default function useApplicationData() {
 
   const bookInterview = (id, interview) => {
 
-    return axios.put(`http://localhost:8001/api/appointments/${id}`, { interview: interview })
+    return axios.put(`/api/appointments/${id}`, { interview: interview })
       .then((res, err) => {
         console.log(res, "axios promise")
         const appointment = {
@@ -43,7 +43,7 @@ export default function useApplicationData() {
   };
 
   const cancelInterview = (id) => {
-    return axios.delete(`http://localhost:8001/api/appointments/${id}`,)
+    return axios.delete(`/api/appointments/${id}`,)
       .then((res, err) => {
 
         const appointment = {

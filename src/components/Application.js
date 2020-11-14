@@ -31,9 +31,9 @@ export default function Application(props) {
     );
   });
   const testUrl = {
-    "GET_DAYS": "http://localhost:8001/api/days",
-    "GET_APPOINTMENTS": "http://localhost:8001/api/appointments",
-    "GET_INTERVIEWERS": "http://localhost:8001/api/interviewers",
+    "GET_DAYS": "/api/days",
+    "GET_APPOINTMENTS": "/api/appointments",
+    "GET_INTERVIEWERS": "/api/interviewers",
   }
 
   useEffect(() => {
