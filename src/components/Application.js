@@ -62,6 +62,7 @@ export default function Application(props) {
             days={state.days}
             day={state.day}
             setDay={setDay}
+            appointments={state.appointments}
           />
 
         </nav>
