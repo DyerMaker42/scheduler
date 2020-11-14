@@ -40,7 +40,6 @@ export default function useApplicationData() {
 
       })
 
-
   };
 
   const cancelInterview = (id) => {
@@ -70,6 +69,7 @@ export default function useApplicationData() {
 
   return {
     state: state,
+    setState: setState,
     setDay: setDay,
     bookInterview: bookInterview,
     cancelInterview: cancelInterview
