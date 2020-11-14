@@ -43,6 +43,7 @@ export default function Form(props) {
             onChange={onNameChange}
           />
         </form>
+        {props.errors && <span>{props.errors}</span>}
         <InterviewerList
           interviewers={props.interviewers}
           interviewer={interviewer}

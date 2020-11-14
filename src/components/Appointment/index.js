@@ -28,6 +28,9 @@ export default function Appointment(props) {
     interviewTrue ? SHOW : EMPTY
   )
   function save(name, interviewer) {
+    if(interviewer === null || name === ''){
+      transition(ERROR_SAVE);
+    } else {
     const interview = {
       student: name,
       interviewer
@@ -40,6 +43,7 @@ export default function Appointment(props) {
       .catch(err => {
         transition(ERROR_SAVE)
       })
+    }
   }
 
   function deleting() {
@@ -73,6 +77,7 @@ export default function Appointment(props) {
       {mode === CONFIRM && <Confirm onCancel={back} onConfirm={deleting} message="Are you sure you want to delete?" />}
       {mode === EDITING && <Form name={props.interview.student} interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers} onSave={save} onCancel={back} />}
+      {mode === ERROR_SAVE && <Form interviewers={props.interviewers} errors={'Make sure you select an Interviewer and input a Student name to proceed.'} onCancel={back} onSave={save} />}
 
     </article>
   )
