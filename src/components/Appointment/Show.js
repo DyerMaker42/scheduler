@@ -9,6 +9,7 @@ export default function Show(props){
     <main className="appointment__card appointment__card--show">
   <section className="appointment__card-left">
     <h2 className="text--regular">{props.name}</h2>
+    { props.error && <h4>{props.error}</h4> }
     <section className="interviewer">
       <h4 className="text--light">{props.interviewer.name}</h4>
       <h3 className="text--regular">{props.name}</h3>

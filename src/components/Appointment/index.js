@@ -19,6 +19,7 @@ const SAVING = "SAVING";
 const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
 const EDITING = "EDITING";
+const ERROR_VALIDATE = "ERROR_VALIDATE";
 const ERROR_SAVE = "ERROR_SAVE"
 const ERROR_DELETE = "ERROR DELETE"
 
@@ -29,7 +30,7 @@ export default function Appointment(props) {
   )
   function save(name, interviewer) {
     if(interviewer === null || name === ''){
-      transition(ERROR_SAVE);
+      transition(ERROR_VALIDATE);
     } else {
     const interview = {
       student: name,
@@ -77,8 +78,9 @@ export default function Appointment(props) {
       {mode === CONFIRM && <Confirm onCancel={back} onConfirm={deleting} message="Are you sure you want to delete?" />}
       {mode === EDITING && <Form name={props.interview.student} interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers} onSave={save} onCancel={back} />}
-      {mode === ERROR_SAVE && <Form interviewers={props.interviewers} errors={'Make sure you select an Interviewer and input a Student name to proceed.'} onCancel={back} onSave={save} />}
-
+      {mode === ERROR_VALIDATE && <Form interviewers={props.interviewers} errors={'Make sure you select an Interviewer and input a Student name to proceed.'} onCancel={back} onSave={save} />}
+      {mode === ERROR_SAVE && <Form interviewers={props.interviewers} errors={'Your appointment failed to save, please try again later.'} onCancel={back} onSave={save} />}
+      {mode === ERROR_DELETE && <Show name={props.interview.student} error={"There was a server error, please try deleting later."} interviewer={props.interview.interviewer} />}
     </article>
   )
 }
