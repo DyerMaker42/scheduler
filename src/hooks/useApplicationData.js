@@ -34,11 +34,7 @@ export default function useApplicationData() {
         });
 
       })
-      .catch((err, res) => {
-
-        console.log(err, "sorry charlie")
-
-      })
+      
 
   };
 
@@ -48,7 +44,7 @@ export default function useApplicationData() {
 
         const appointment = {
           ...state.appointments[id],
-          interview: { ...state.interview }
+          interview: null
         }
         const appointments = {
           ...state.appointments,
@@ -60,11 +56,7 @@ export default function useApplicationData() {
         });
 
       })
-      .catch((err, res) => {
-
-        console.log(err, "sorry charlie")
-
-      })
+      
   }
 
   return {
